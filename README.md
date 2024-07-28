@@ -1,17 +1,17 @@
-# blum-bot
+# PoPP to the moon bot
 
-blum-bot is a Telegram automation tool designed to help you manage and interact with [blum bot](https://t.me/BlumCryptoBot/app?startapp=ref_g5qK5BurG3).
+popp to the moon bot is a Telegram automation tool designed to help you manage and interact with [To the moon bot](https://t.me/PoPPtothemoon_bot/moon?startapp=1370196228).
 
 <p align="center">
-  <img src="public/blum.png" alt="blum" width="300"/>
+  <img src="public/popp.png" alt="popp" width="300"/>
 </p>
 
 ### Features
 
 - Auto claim daily Rewards
 - Auto claim farming rewards
-- Auto play game with max points
-- Auto claim mission
+- Auto play game
+- Auto claim mission (soon)
 - support multi account
 
 ### How to use
@@ -21,7 +21,7 @@ you can clone repository and add your token query
 - Clone repository
 
 ```bash
-git clone https://github.com/dkzhen/blum-bot.git
+git clone git@github.com:dkzhen/popp-tothemoon-bot.git
 ```
 
 - add config.json on folder configs
