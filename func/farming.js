@@ -9,7 +9,7 @@ const farming = async () => {
       try {
         const claim = await axios.get(
           "https://moon.popp.club/moon/farming",
-          {},
+
           {
             headers: {
               Authorization: `${token.token}`,
