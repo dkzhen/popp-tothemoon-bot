@@ -4,7 +4,7 @@ const { validateToken } = require("./CheckValidToken");
 const rewardDaily = async () => {
   try {
     const tokens = await validateToken();
-    console.log(tokens);
+
     for (const token of tokens) {
       try {
         const claim = await axios.post(
