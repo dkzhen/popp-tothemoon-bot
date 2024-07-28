@@ -3,8 +3,8 @@ const express = require("express");
 
 const { configDotenv } = require("dotenv");
 const { rewardDaily } = require("./func/DailyReward");
-const { playGame } = require("./func/playgame");
 const { farming } = require("./func/farming");
+const { playGame } = require("./func/playgame");
 
 configDotenv();
 // Schedule the task to run every hour on the hour
