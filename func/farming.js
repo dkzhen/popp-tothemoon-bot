@@ -16,8 +16,9 @@ const farming = async () => {
             },
           }
         );
+
         const claim = await axios.get(
-          "https://moon.popp.club/moon/farming/claim",
+          "https://moon.popp.club/moon/claim/farming",
 
           {
             headers: {
