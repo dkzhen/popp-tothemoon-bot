@@ -21,7 +21,7 @@ you can clone repository and add your token query
 - Clone repository
 
 ```bash
-git clone git@github.com:dkzhen/popp-tothemoon-bot.git
+git clone https://github.com/dkzhen/popp-tothemoon-bot
 ```
 
 - add config.json on folder configs
