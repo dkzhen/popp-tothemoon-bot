@@ -4,17 +4,18 @@ const express = require("express");
 const { configDotenv } = require("dotenv");
 const { rewardDaily } = require("./func/DailyReward");
 const { farming } = require("./func/farming");
-const { playGame } = require("./func/playgame");
+const { planetGame } = require("./func/ExplorePlanet");
 
 configDotenv();
 // Schedule the task to run every hour on the hour
 
 rewardDaily();
 farming();
-playGame();
+planetGame();
+
 cron.schedule("0 * * * *", rewardDaily);
 cron.schedule("0 * * * *", farming);
-cron.schedule("0 * * * *", playGame);
+cron.schedule("0 * * * *", planetGame);
 
 // Start the server
 const port = process.env.PORT || 104;

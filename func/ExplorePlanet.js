@@ -1,7 +1,7 @@
 const { validateToken } = require("./CheckValidToken");
 const { getProfile, getPlanet, explorePlanet } = require("./repo");
 
-const playGame = async () => {
+const planetGame = async (token, planetId) => {
   try {
     const tokens = await validateToken();
 
@@ -44,4 +44,5 @@ const playGame = async () => {
     console.log(error.message);
   }
 };
-module.exports = { playGame };
+
+module.exports = { planetGame };
