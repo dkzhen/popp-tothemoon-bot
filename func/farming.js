@@ -36,7 +36,7 @@ const farming = async () => {
             `[ Running ] : Farming claimed. Response code : ${claim.data.code} `
           );
         } else {
-          console.log(`[ Running ] : Farming started... ${code}`);
+          console.log(`[ Running ] : Farming started... `);
         }
       } catch (error) {
         console.log(`[ Error ] : Farming failed. ${error.message}`);
