@@ -4,10 +4,10 @@ const { validateToken } = require("./CheckValidToken");
 const farming = async () => {
   try {
     const tokens = await validateToken();
-    console.log(tokens);
+
     for (const token of tokens) {
       try {
-        const claim = await axios.get(
+        const start = await axios.get(
           "https://moon.popp.club/moon/farming",
 
           {
@@ -16,23 +16,33 @@ const farming = async () => {
             },
           }
         );
-        const code = claim.data.code;
+        const claim = await axios.get(
+          "https://moon.popp.club/moon/farming/claim",
+
+          {
+            headers: {
+              Authorization: `${token.token}`,
+            },
+          }
+        );
+        const code = start.data.code;
 
         if (code === "400") {
           console.log(
             `[ Completed ] : Farming already running!. Response code : ${code} `
           );
-        } else {
           console.log(
-            `[ Running ] : Daily rewards successfully claimed. ${code}`
+            `[ Running ] : Farming claimed. Response code : ${claim.data.code} `
           );
+        } else {
+          console.log(`[ Running ] : Farming started... ${code}`);
         }
       } catch (error) {
-        console.log(`[ Error ] : Daily rewards failed. ${error.message}`);
+        console.log(`[ Error ] : Farming failed. ${error.message}`);
       }
     }
   } catch (error) {
-    console.log(`[ Error ] : Daily rewards failed. ${error.message}`);
+    console.log(`[ Error ] : Farming failed. ${error.message}`);
   }
 };
 

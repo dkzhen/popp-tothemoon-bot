@@ -22,9 +22,7 @@ exports.getAuthToken = async () => {
 
         authToken.push({ token: auth });
       } catch (error) {
-        console.log(
-          `[ Error ] : Token not valid. Response code : ${error.response.status} `
-        );
+        console.log(`[ Error ] : Token not valid. Message : ${error.message} `);
       }
     }
     return authToken;
