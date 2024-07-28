@@ -1,14 +1,14 @@
 const { default: axios } = require("axios");
 const { validateToken } = require("./CheckValidToken");
 
-const rewardDaily = async () => {
+const farming = async () => {
   try {
     const tokens = await validateToken();
     console.log(tokens);
     for (const token of tokens) {
       try {
-        const claim = await axios.post(
-          "https://moon.popp.club/moon/sign/in",
+        const claim = await axios.get(
+          "https://moon.popp.club/moon/farming",
           {},
           {
             headers: {
@@ -17,9 +17,10 @@ const rewardDaily = async () => {
           }
         );
         const code = claim.data.code;
+
         if (code === "400") {
           console.log(
-            `[ Completed ] : Checked in today. Response code : ${code} `
+            `[ Completed ] : Farming already running!. Response code : ${code} `
           );
         } else {
           console.log(
@@ -35,4 +36,4 @@ const rewardDaily = async () => {
   }
 };
 
-module.exports = { rewardDaily };
+module.exports = { farming };

@@ -4,19 +4,22 @@ const fs = require("fs").promises;
 configDotenv();
 
 exports.getAuthToken = async () => {
-  const API_AUTH =
-    "https://gateway.blum.codes/v1/auth/provider/PROVIDER_TELEGRAM_MINI_APP";
+  const API_AUTH = "https://moon.popp.club/pass/login";
 
   try {
     const data = await fs.readFile("configs/config.json", "utf-8");
     const tokens = JSON.parse(data);
+
     const authToken = [];
 
     for (const token of tokens) {
+      const body = {
+        initData: token.token,
+      };
       try {
-        const response = await axios.post(API_AUTH, { query: token.token });
+        const response = await axios.post(API_AUTH, body);
+        const auth = response.data.data.token;
 
-        const auth = response.data.token.refresh;
         authToken.push({ token: auth });
       } catch (error) {
         console.log(

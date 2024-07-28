@@ -4,7 +4,7 @@ const { getAuthToken } = require("./getAuthToken");
 configDotenv();
 
 exports.validateToken = async () => {
-  const API_URL = "https://game-domain.blum.codes/api/v1/tasks";
+  const API_URL = "https://moon.popp.club/moon/asset";
   const tokens = await getAuthToken();
 
   const validToken = [];
@@ -12,7 +12,7 @@ exports.validateToken = async () => {
     try {
       await axios.get(API_URL, {
         headers: {
-          Authorization: `Bearer ${token.token}`,
+          Authorization: `${token.token}`,
         },
       });
 
