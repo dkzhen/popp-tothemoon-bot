@@ -24,7 +24,7 @@ const planetGame = async (token, planetId) => {
                 return data;
               });
               console.log(
-                `[ Game ] Explore planet successfully. Reward : ${explore.amount} ${explore.award}`
+                `[ Game ] Explore planet successfully. Reward : ${explore.award}`
               );
             } else {
               console.log(`[ Game ] Planet not found`);
