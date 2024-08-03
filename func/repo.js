@@ -45,3 +45,16 @@ exports.explorePlanet = async (token, planetId) => {
     console.log(error.message);
   }
 };
+
+exports.getTaskList = async (token) => {
+  try {
+    const task = await axios.get("https://moon.popp.club/moon/task/list", {
+      headers: {
+        Authorization: `${token}`,
+      },
+    });
+    return task.data.data;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
