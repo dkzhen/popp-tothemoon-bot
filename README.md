@@ -11,7 +11,7 @@ popp to the moon bot is a Telegram automation tool designed to help you manage a
 - Auto claim daily Rewards
 - Auto claim farming rewards
 - Auto play game
-- Auto claim mission (soon)
+- Auto claim mission (social summer)
 - support multi account
 
 ### How to use
